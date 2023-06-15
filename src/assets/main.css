@@ -24,6 +24,7 @@ a,
 @media (min-width: 1024px) {
   body {
     display: flex;
+    justify-content: space-around;
     place-items: center;
   }
 }

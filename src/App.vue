@@ -7,8 +7,16 @@ function increment() {
   count.value++;
 }
 function decrement() {
+  console.log("loll........")
+
   count.value--;
 }
+
+function holdDecrement() {
+  console.log("holdddddddddddddddd........")
+  count.value--;
+}
+
 function reset() {
   count.value = 0;
 }
@@ -16,7 +24,7 @@ function reset() {
 
 <template>
   <main>
-    <div>
+    <div class="ib">
       <span>Count is: </span>
       <span
         ><em>
@@ -24,17 +32,35 @@ function reset() {
         </em>
       </span>
     </div>
-    <button @click="decrement">-</button>
-    <button @click="reset">reset</button>
-    <button @click="increment">+</button>
+    <div class="ib">
+      <button @click="decrement" @mousedown="holdDecrement" >-</button>
+      <button @click="reset">reset</button>
+      <button @click="increment">+</button>
+    </div>
   </main>
 </template>
 
 <style scoped>
+* {
+  outline: 1px auto greenyellow;
+}
 main {
+  height: 100vh;
+  width: 100wh;
+  display: flex;
   font-size: 5rem;
+  align-items: center;
+  justify-content: space-around;
+}
+.ib {
+  display: inline-block;
+  border: 1px solid #ccc;
+}
+div {
+  position: sticky;
 }
 button {
-  font-size: inherit;
+  border-radius: 11%;
+  font-size: 2rem;
 }
 </style>
